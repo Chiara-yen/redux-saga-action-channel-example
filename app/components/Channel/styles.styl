@@ -1,0 +1,55 @@
+$display-font-color = rgb(0,128,128)
+$alert-font-color = #F96
+
+/* button */
+$btn-color = #F69
+$btn-bg-color = #FFC1D6
+
+$btn-hover-color = #FFF
+$btn-bg-hover-color = #F69
+
+$btn-active-color = #FFF
+$btn-bg-active-color = #FFC1D6
+
+.block {
+  margin 30px
+  text-align center
+}
+
+.msgBlock {
+  margin-top 50px
+  text-align left
+  font-weight bold
+  font-size 18px
+  color $display-font-color
+}
+
+.alertBlock {
+  margin-top 10px
+  text-align left
+  font-weight bold
+  font-size 18px
+  color $alert-font-color
+}
+
+.Btn {
+  width 300px
+  margin 10px
+  padding 5px
+  font-weight bold
+  font-size 24px
+  border-radius 15px
+  border 2px solid $btn-color
+  outline none
+  color $btn-color
+  background-color $btn-bg-color
+  &:hover {
+    color $btn-hover-color
+    background-color $btn-bg-hover-color
+  }
+  &:active {
+    outline none
+    color $btn-active-color
+    background-color $btn-bg-active-color
+  }
+}
