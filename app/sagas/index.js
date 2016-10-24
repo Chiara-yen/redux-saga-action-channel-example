@@ -1,10 +1,8 @@
 import { call, put, take, actionChannel } from 'redux-saga/effects'
-import { takeEvery } from 'redux-saga'
+import { takeEvery, delay } from 'redux-saga'
 import fetch from 'isomorphic-fetch'
 
-const URL = 'https://api.github.com/users/mralexgray/repos'
-
-const delay = ms => new Promise(resolve => setTimeout(resolve, ms))
+const URL = 'https://api.github.com/users/Chiara-yen/repos'
 
 function getData() {
   return fetch(URL).then(response => response.json())
@@ -21,7 +19,7 @@ function* fetchData(index) {
 }
 
 function* fetchDataSaga() {
-	let index = 0
+  let index = 0
   const requestChan = yield actionChannel('FETCH_ASYNC')
   while (true) {
     yield take(requestChan)
@@ -31,7 +29,7 @@ function* fetchDataSaga() {
 }
 
 function* increment() {
-	yield put({type: 'INCREMENT'})
+  yield put({type: 'INCREMENT'})
 }
 
 function* counter() {
@@ -40,7 +38,7 @@ function* counter() {
 
 export default function* root() {
   yield [
-  	counter(),
-  	fetchDataSaga()
+    counter(),
+    fetchDataSaga()
   ]
 }
